@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>K-홈코노미 트렌드 분석</title>
+
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <style>
+        .transAll {
+            box-sizing: border-box;
+            display: inline-block;
+            overflow: hidden;
+            width: 40%;
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
+        }
+
+        .transUL {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            white-space: nowrap;
+            border: 1px dotted #ccc;
+        }
+
+        .transX {
+            position: relative;
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            animation-name: moving;
+            animation-duration: 12s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+        }
+
+        @keyframes moving {
+            0% {left: 0%;}
+            30% {left: 0%;}
+            33% {left: -104%;}
+            63% {left: -104%;}
+            66% {left: -208%;}
+            97% {left: -208%;}
+            100% {left: 0%;}
+        }
+    </style>
+
+</head>
+
+<body id="page-top">
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">95Z <sup>2nd TEAM</sup></div>
+            </a>
+
+            <hr class="sidebar-divider my-0">
+
+            <li class="nav-item">
+                <a class="nav-link" href="dashboard.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Story</span></a>
+            </li>
+
+        </ul>
+
+        <!-- Main Content -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <div id="content">
+
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="position: fixed !important; width: 100%; z-index: 1000;">
+
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                </nav>
+
+                <div class="container-fluid" style="padding-top: 110px;">
+
+                    <h1 class="h3 mb-2 text-gray-800">집 밖은 위험하니까</h1>
+                    <p class="mb-4" style="text-align: justify;">&nbsp;코로나19의 가장 중요한 대응법으로 '사회적 거리 두기'가 떠오르면서 '방콕' 생활을 하는 날들이 이어지고 있는데요.
+                        랜선으로 이어진 언택트 문화는 생활의 편리함을 가져다주었지만, 우울감과 외로움 등 부정적인 감정을 극복하기 위한 <a href="#">‘나를 위한 가치 소비’</a>가 새로운 트렌드로 떠오르고 있습니다.<br>
+                        &nbsp;단순히 편리함을 제공하는 것을 넘어 건강과 재미를 추구하며 삶의 질을 높이기를 원하는 소비자들의 욕구를 충족시켜주는 것, 포스트 코로나 시대에 홈코노미 산업이 나아갈 방향입니다. 새로운 소비 트렌드를 이끌며
+                        우리의 생활을 가꾸어가는 지혜가 필요한 때입니다.
+                    </p>
+
+                    <div class="row">
+
+                        <div class="col-xl-8 col-lg-7">
+
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">가장 많이 찾는 분야</h6>
+                                </div>
+                                <div class="card-body" style="text-align: center;">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart_all"></canvas>
+                                    </div>
+                                    <hr>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle" style="color: #E2AA00 !important;"></i> 패션
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle" style="color: #5B4E55 !important;"></i> 디지털/가전
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle" style="color: #8FA2D4 !important;"></i> 여가/생활편의
+                                        </span><br>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle" style="color: #62993E !important;"></i> 가구/인테리어
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle" style="color: #538BBD !important;"></i> 스포츠/레저
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle" style="color: #F1A78A !important;"></i> 식품
+                                        </span>
+                                    </div>
+                                    <br>
+                                    K-홈코노미족들은<br>
+                                    <div class="transAll">
+                                        <ul class="transUL">
+                                            <li class="transX"><code>가구/인테리어</code></li>
+                                            <li class="transX"><code>스포츠/레저</code></li>
+                                            <li class="transX"><code>식품</code></li>
+                                        </ul>
+                                    </div>
+                                     분야를<br>가장 많이 찾았어요!<br>
+                                    <span style="font-size: 10px; color: #ccc;">※ 전년도 대비 상승 항목 기준 ※</span>
+                                </div>
+                            </div>
+
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">검색어 트렌드 TOP 10</h6>
+                                </div>
+                                <div class="card-body" style="text-align: center;">
+                                    <div class="chart-bar" style="height: auto;">
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem; margin: 0rem !important;" src="img/wordCloud.png" alt="">
+                                    </div>
+                                    <hr>
+                                    <div style="text-align: right; width: 15%; margin-left: 20px; float: left;">
+                                        <code>01<br>02<br>03<br>04<br>05<br>06<br>07<br>08<br>09<br>10</code>
+                                    </div>
+                                    <div style="text-align: left; width: auto; margin-left: 20px; margin-right: -20px; float: left;">
+                                        마스크<br>이케아<br>스타벅스서머레디백<br>이케아온라인몰<br>젝시믹스<br>안다르<br>첵스파맛<br>크릴오일<br>닭가슴살<br>파타고니아
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                    <h1 class="h3 mb-2 text-gray-800" style="text-align: center; font-weight: 700; margin-top: 50px;">당신은 어떤가요?</h1><br>
+                    <form>
+                        <p class="mb-4" style="text-align: center;">나는
+                            <select id="age" name="age" style="width: 130px; height: 35px; border: 1px solid #ddd;">
+                                <option value="10대 여성">10대 여성</option>
+                                <option value="10대 남성">10대 남성</option>
+                                <option value="20대 여성">20대 여성</option>
+                                <option value="20대 남성">20대 남성</option>
+                                <option value="30대 여성">30대 여성</option>
+                                <option value="30대 남성">30대 남성</option>
+                                <option value="40대 여성">40대 여성</option>
+                                <option value="40대 남성">40대 남성</option>
+                                <option value="50대 여성">50대 여성</option>
+                                <option value="50대 남성">50대 남성</option>
+                                <option value="60대이상 여성">60대이상 여성</option>
+                                <option value="60대이상 남성">60대이상 남성</option>
+                            </select>
+                            입니다.<br>
+                            <select id="cate" name="cate" style="width: 130px; height: 35px; border: 1px solid #ddd; margin-top: 5px;">
+                                <option value="가구/인테리어">가구/인테리어</option>
+                                <option value="스포츠/레저">스포츠/레저</option>
+                                <option value="식품">식품</option>
+                            </select>
+                            의 상품이 궁금해요!<br><br>
+
+                            <button style="font-size: 12px; color: #bbb; border: none; height: 25px; border-radius: 5px;" onclick="prod(); return false">친구들이 많이 산 상품을 보여드릴게요!</button><br>▽<br><br>
+                            <script>
+                                function prod(){
+                                    if ($("#prodrow").css("display") == "none") {
+                                        $('#prodrow').show();
+                                    }
+
+                                    var agedata = document.getElementById('age');
+                                    var catedata = document.getElementById('cate');
+
+                                    var options = agedata.options;
+                                    var options2 = catedata.options;
+
+                                    selIndex = agedata.selectedIndex;
+                                    selvalue = options[selIndex].value; // 20대 여성, 30대 남성 ..
+                                    selcateIndex = catedata.selectedIndex;
+                                    selcatevalue = options2[selcateIndex].value; // 가구/인테리어, 스포츠/레저, 식품
+
+                                    var result = "결과 이미지"; // <img src ...>
+                                    var resultCategory = ""; // 카테고리명
+
+                                    switch (selvalue) {
+                                        case "10대 여성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-female-10-jewel-cross-stitch.png'>";
+                                                resultCategory = selcatevalue + " > 보석십자수";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-female-10-Hiking-cloth.png'>";
+                                                resultCategory = selcatevalue + " > 등산의류";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-female-10-cookie.png'>";
+                                                resultCategory = selcatevalue + " > 쿠키";
+                                            }
+                                            break;
+
+                                        case "10대 남성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-male-10-lighting.png'>";
+                                                resultCategory = selcatevalue + " > 조명";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-male-10-Bicycle.png'>";
+                                                resultCategory = selcatevalue + " > 자전거/MTB";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-male-10-protein.png'>";
+                                                resultCategory = selcatevalue + " > 헬스보조제";
+                                            }
+                                            break;
+
+                                        case "20대 여성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-female-20-aroma-candle.png'>";
+                                                resultCategory = selcatevalue + " > 아로마/캔들";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-female-20-Hiking-cloth.png'>";
+                                                resultCategory = selcatevalue + " > 등산의류";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-female-20-Vitamin.png'>";
+                                                resultCategory = selcatevalue + " > 영양제";
+                                            }
+                                            break;
+
+                                        case "20대 남성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-male-20-lighting.png'>";
+                                                resultCategory = selcatevalue + " > 의자";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-male-20-Hiking-cloth.png'>";
+                                                resultCategory = selcatevalue + " > 등산의류";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-male-20-Meat.png'>";
+                                                resultCategory = selcatevalue + " > 축산가공식품";
+                                            }
+                                            break;
+
+                                        case "30대 여성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-female-30-sofa.png'>";
+                                                resultCategory = selcatevalue + " > 소파";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-female-30-Hiking-cloth.png'>";
+                                                resultCategory = selcatevalue + " > 등산의류";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-female-30-Vitamin.png'>";
+                                                resultCategory = selcatevalue + " > 영양제";
+                                            }
+                                            break;
+
+                                        case "30대 남성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-male-30-lighting.png'>";
+                                                resultCategory = selcatevalue + " > 조명";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-male-30-Hiking-cloth.png'>";
+                                                resultCategory = selcatevalue + " > 등산의류";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-male-30-Vitamin.png'>";
+                                                resultCategory = selcatevalue + " > 영양제";
+                                            }
+                                            break;
+
+                                        case "40대 여성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-female-40-sofa.png'>";
+                                                resultCategory = selcatevalue + " > 소파";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-female-40-Hiking-cloth.png'>";
+                                                resultCategory = selcatevalue + " > 등산의류";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-female-40-Vitamin.png'>";
+                                                resultCategory = selcatevalue + " > 영양제";
+                                            }
+                                            break;
+
+                                        case "40대 남성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-male-40-lighting.png'>";
+                                                resultCategory = selcatevalue + " > 조명";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-male-40-Hiking-cloth.png'>";
+                                                resultCategory = selcatevalue + " > 등산의류";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-male-40-Vitamin.png'>";
+                                                resultCategory = selcatevalue + " > 영양제";
+                                            }
+                                            break;
+
+                                        case "50대 여성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-female-50-dining-table.png'>";
+                                                resultCategory = selcatevalue + " > 테이블/의자";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-female-50-golf-cloth.png'>";
+                                                resultCategory = selcatevalue + " > 골프의류";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-female-50-Vitamin.png'>";
+                                                resultCategory = selcatevalue + " > 영양제";
+                                            }
+                                            break;
+
+                                        case "50대 남성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-male-50-lighting.png'>";
+                                                resultCategory = selcatevalue + " > 조명";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-male-50-Hiking-cloth.png'>";
+                                                resultCategory = selcatevalue + " > 등산의류";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-male-50-Vitamin.png'>";
+                                                resultCategory = selcatevalue + " > 영양제";
+                                            }
+                                            break;
+
+                                        case "60대이상 여성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-female-60-dining-table.png'>";
+                                                resultCategory = selcatevalue + " > 테이블/의자";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-female-60-Hiking-cloth.png'>";
+                                                resultCategory = selcatevalue + " > 등산의류";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-female-60-Vitamin.png'>";
+                                                resultCategory = selcatevalue + " > 영양제";
+                                            }
+                                            break;
+
+                                        case "60대이상 남성":
+                                            if (selcatevalue == "가구/인테리어") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/01-male-60-lighting.png'>";
+                                                resultCategory = selcatevalue + " > 조명";
+                                            } else if (selcatevalue == "스포츠/레저") {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/03-male-60-Hiking-cloth.png'>";
+                                                resultCategory = selcatevalue + " > 등산의류";
+                                            } else {
+                                                result = "<img class='img-fluid px-3 px-sm-4 mt-3 mb-4' style='width: 10rem;' src='img/02-male-60-Vitamin.png'>";
+                                                resultCategory = selcatevalue + " > 영양제";
+                                            }
+                                            break;
+
+                                        default:
+                                            result = "선택한 값이 없습니다.";
+                                    }
+
+                                    document.getElementById('resultAgeName').innerHTML = selvalue;
+                                    document.getElementById('printimg').innerHTML = result;
+                                    document.getElementById('resultCategoryName').innerHTML = resultCategory;
+                                }
+                            </script>
+                        </p>
+                    </form>
+
+                    <div class="row" id="prodrow" style="display: none;">
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <div class="card-body">
+                                    <p style="text-align: center; margin-top: 10px;"><a rel="none" href="none" id="resultAgeName"></a>은 지금</p>
+                                    <div class="text-center" id="printimg">
+                                        <!-- <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 10rem;" src="img/03-female-20-Hiking-cloth.png" alt=""> -->
+                                    </div>
+                                    <p style="text-align: center; margin-top: 10px;"><a rel="none" href="none" id="resultCategoryName"></a> 에<br>
+                                        관심이 많아요!</p>
+                                    <p style="text-align: center; margin-top: 10px;"><a href="dashboard.html" style="color: #aaa; font-size: 12px;">다른 사람들 결과 보러 가기 ></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Homeconomy Trend 2020</span>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+    </div>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <script src="js/demo/chart-area-demo_all.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-bar-demo.js"></script>
+
+</body>
+
+</html>

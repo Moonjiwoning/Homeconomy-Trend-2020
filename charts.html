@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>K-홈코노미 트렌드 분석</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">95Z <sup>2nd TEAM</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item active">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Charts</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">95Z</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">집 밖은 위험하니까</h1>
+                    <p class="mb-4" style="text-align: justify;">&nbsp;코로나19의 가장 중요한 대응법으로 '사회적 거리 두기'가 떠오르면서 '방콕' 생활을 하는 날들이 이어지고 있는데요.
+                        랜선으로 이어진 언택트 문화는 생활의 편리함을 가져다주었지만, 우울감과 외로움 등 부정적인 감정을 극복하기 위한 <a href="#">‘나를 위한 가치 소비’</a>가 새로운 트렌드로 떠오르고 있습니다.<br>
+                        &nbsp;단순히 편리함을 제공하는 것을 넘어 건강과 재미를 추구하며 삶의 질을 높이기를 원하는 소비자들의 욕구를 충족시켜주는 것, 포스트 코로나 시대에 홈코노미 산업이 나아갈 방향입니다. 새로운 소비 트렌드를 이끌며
+                        우리의 생활을 가꾸어가는 지혜가 필요한 때입니다.
+                        
+                    </p>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <div class="col-xl-8 col-lg-7">
+
+                            <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">가장 많이 찾는 분야</h6>
+                                </div>
+                                <div class="card-body" style="text-align: center;">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                    <hr>
+                                    K-홈코노미족들은<br><code>가구/인테리어</code> 분야를<br>가장 많이 찾았어요!
+                                </div>
+                            </div>
+
+                            <!-- Bar Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">검색어 트렌드 TOP 10</h6>
+                                </div>
+                                <div class="card-body" style="text-align: center;">
+                                    <div class="chart-bar">
+                                        <canvas id="myBarChart"></canvas>
+                                    </div> <!-- 워드 클라우드 들어가는 부분 -->
+                                    <hr>
+                                    <div style="text-align: right; width: 15%; margin-left: 20px; float: left;">
+                                        <code>01<br>02<br>03<br>04<br>05<br>06<br>07<br>08<br>09<br>10</code>
+                                    </div>
+                                    <div style="text-align: left; width: auto; margin-left: 20px; margin-right: -20px; float: left;">
+                                        오렌지<br>대저토마토<br>떡볶이<br>K2플라이하이크<br>골프바람막이<br>여성골프조끼<br>야외테이블<br>인조잔디<br>우산꽂이<br>단추
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800" style="text-align: center; font-weight: 700; margin-top: 50px;">당신은 어떤가요?</h1><br>
+                    <p class="mb-4" style="text-align: center;">나는
+                        <select name="age" style="width: 120px; height: 35px; border: 1px solid #ddd;">
+                            <option value="10_female">10대 여성</option>
+                            <option value="10_male">10대 남성</option>
+                            <option value="20_female">20대 여성</option>
+                            <option value="20_male">20대 남성</option>
+                            <option value="30_female">30대 여성</option>
+                            <option value="30_male">30대 남성</option>
+                            <option value="40_female">40대 여성</option>
+                            <option value="40_male">40대 남성</option>
+                            <option value="50_female">50대 여성</option>
+                            <option value="50_male">50대 남성</option>
+                            <option value="60_female">60대이상 여성</option>
+                            <option value="60_male">60대이상 남성</option>
+                        </select>
+                        입니다.<br>
+                        <select name="month" style="width: 60px; height: 35px; border: 1px solid #ddd; margin-top: 5px;">
+                            <option value="jan">1월</option>
+                            <option value="feb">2월</option>
+                            <option value="mar">3월</option>
+                            <option value="apr">4월</option>
+                            <option value="may">5월</option>
+                            <option value="jun">6월</option>
+                            <option value="jul">7월</option>
+                            <option value="aug">8월</option>
+                            <option value="sep">9월</option>
+                            <option value="oct">10월</option>
+                            <option value="nov">11월</option>
+                            <option value="dec">12월</option>
+                        </select>
+                        의 상품이 궁금해요!<br><br>
+
+                        <span style="font-size: 12px; color: #bbb;">친구들이 많이 산 상품을 보여드릴게요!</span><br><br>
+                        
+                    </p>
+
+                    <div class="row">
+
+                        <!-- Illustrations -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                            src="img/undraw_posting_photo.svg" alt="">
+                                    </div>
+                                    <p>Add some quality, svg illustrations to your project courtesy of <a
+                                            target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
+                                        constantly updated collection of beautiful svg images that you can use
+                                        completely free and without attribution!</p>
+                                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
+                                        unDraw &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Homeconomy Trend 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-bar-demo.js"></script>
+
+</body>
+
+</html>
